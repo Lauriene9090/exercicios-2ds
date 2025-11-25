@@ -21,6 +21,8 @@ server.use("/", routes);
 // Inicializa o servidor
 server.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
+}).close(() => {
+  console.log("Servidor encerrado.");
 });
 
 export default server
