@@ -39,4 +39,3 @@ describe("Testes do Projeto 6 - TechMarket API", () => {
     expect(res.body).toEqual(novo);
   });
 });
-
