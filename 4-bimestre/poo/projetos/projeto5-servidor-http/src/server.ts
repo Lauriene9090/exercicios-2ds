@@ -14,12 +14,16 @@ const server = http.createServer((req, res) => {
   const nome = "Maria Lauriene";
   const idade = 23;
 
-  res.end(`<h1>Olá! Meu nome é ${nome} e tenho ${idade} anos.</h1>`);
+  res.end("Servidor rodando para John, idade 34!");
 });
 
 // Inicia o servidor
 server.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
 });
+
+server.close(() => {
+  console.log("Servidor encerrado.")
+})
 
 export default server
