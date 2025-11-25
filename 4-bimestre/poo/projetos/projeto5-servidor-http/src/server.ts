@@ -1,4 +1,4 @@
-import http from "http";
+import http from "node:http";
 
 
 // Carrega as variáveis do arquivo .env
@@ -21,3 +21,5 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
 });
+
+export default server

@@ -1,9 +1,10 @@
-import request from 'supertest';
-import app from '../src/server';
+import request from "supertest"
+import server from "../src/server"
 
-describe('Servidor Express', () => {
-  test('Deve responder na rota raiz com status 200', async () => {
-    const resposta = await request(app).get('/');
-    expect(resposta.status).toBe(200);
-  });
-});
+describe("Teste do servidor HTTP", () => {
+  test("Deve exibir mensagem personalizada no navegador", async () => {
+    const response = await request(server).get("/")
+    expect(response.statusCode).toBe(200)
+    expect(response.text).toContain("Servidor rodando para John, idade 34!")
+  })
+})
