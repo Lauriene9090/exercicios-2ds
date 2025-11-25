@@ -15,7 +15,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^30.0.0",
+<<<<<<< HEAD
     "@types/mocha": "^10.0.10",
+=======
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4",
+>>>>>>> origin/main
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
