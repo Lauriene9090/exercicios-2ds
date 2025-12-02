@@ -3,8 +3,11 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import path from "path";
 import router from "./routes";
+import { Server } from "http";
 
 dotenv.config();
+
+// MULHER!!! TROCA ESSAS RUMA DE APP PARA SERVER, PQ TU NA LNHA 29, TA EXPORTANDO ALGO DE SERVER, NÃO DE APP
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,4 +24,6 @@ app.use("/", router);
 // Inicializa o servidor
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
-});
+})
+
+export default Server;
