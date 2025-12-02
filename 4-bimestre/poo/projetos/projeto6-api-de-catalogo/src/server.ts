@@ -1,26 +1,24 @@
 import express from "express";
 import helmet from "helmet";
+import dotenv from "dotenv";
 import path from "path";
 import router from "./routes";
 
-const server = express();
+dotenv.config();
 
-// Middlewares
-server.use(helmet());
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-
-// Servir arquivos estáticos
-server.use(express.static(path.join(__dirname, "../public")));
-
-// Rotas
-server.use("/", router);
-
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const app = server.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}/`);
-});
+// Middlewares
+app.use(helmet());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "../public")));
 
-// Exportar para testes automatizados
-export default app;
+// Rotas
+app.use("/", router);
+
+// Inicializa o servidor
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
+});

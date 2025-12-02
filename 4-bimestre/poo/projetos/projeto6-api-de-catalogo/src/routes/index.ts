@@ -1,19 +1,16 @@
-import { Router, Request, Response } from "express";
-import produtosRouter from "./produto";
+import { Router } from "express";
+import produtosRouter from "./produtos";
 
 const router = Router();
 
-// Rota principal
-router.get("/", (req: Request, res: Response) => {
-  res.json({ nome: "Maria Lauriene Almeida Nascimento", idade: 25 });
-});
-
-// Rota /ping
-router.get("/ping", (req: Request, res: Response) => {
+router.get("/ping", (req, res) => {
   res.json({ pong: true });
 });
 
-// Rota /produtos
+router.get("/", (req, res) => {
+  res.json({ nome: "Maria Lauriene", idade: 23 });
+});
+
 router.use("/produtos", produtosRouter);
 
 export default router;
