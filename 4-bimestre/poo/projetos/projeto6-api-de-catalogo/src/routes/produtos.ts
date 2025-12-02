@@ -2,6 +2,7 @@ import { Router } from "express";
 
 const router = Router();
 
+<<<<<<< HEAD
 interface Produto {
   id: number;
   nome: string;
@@ -15,10 +16,18 @@ let produtos: Produto[] = [
 ];
 
 // GET / → lista todos os produtos
+=======
+let produtos = [
+  { id: 1, nome: "Mouse", preco: 50 },
+  { id: 2, nome: "Teclado", preco: 150 },
+];
+
+>>>>>>> origin/main
 router.get("/", (req, res) => {
   res.json(produtos);
 });
 
+<<<<<<< HEAD
 // GET /:id → retorna um produto específico
 router.get("/:id", (req, res) => {
   const id = Number(req.params.id);
@@ -47,6 +56,18 @@ router.post("/", (req, res) => {
 
   produtos.push(novoProduto);
   res.status(201).json(novoProduto);
+=======
+router.get("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const produto = produtos.find((p) => p.id === id);
+  res.json(produto);
+});
+
+router.post("/", (req, res) => {
+  const novoProduto = req.body; // pega o objeto inteiro
+  produtos.push(novoProduto);   // adiciona direto
+  res.json(novoProduto);        // devolve igual
+>>>>>>> origin/main
 });
 
 export default router;

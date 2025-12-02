@@ -1,14 +1,19 @@
 {
-  "name": "ex06-techmarket",
+  "name": "projeto6-api-de-catalogo",
   "version": "1.0.0",
-  "description": "API REST simples com Express e TypeScript",
-  "main": "dist/server.js",
+  "description": "PROFESSOR: Everson Sousa | TURMA: 2º EM DESENVOLVIMENTO DE SISTEMAS",
+  "main": "jest.config.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "test": "jest",
+    "dev": "ts-node-dev --respawn src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },
   "keywords": [],
+<<<<<<< HEAD
   "author": "Maria Lauriene Almeida Nascimento",
   "license": "MIT",
   "dependencies": {
@@ -23,5 +28,25 @@
     "nodemon": "^3.1.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
+=======
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/helmet": "^4.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/supertest": "^6.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "supertest": "^7.1.4"
+>>>>>>> origin/main
   }
 }
