@@ -2,28 +2,26 @@ import express from "express";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import path from "path";
-<<<<<<< HEAD
 import router from "./routes";
-import { Server } from "http";
 
 dotenv.config();
 
 // MULHER!!! TROCA ESSAS RUMA DE APP PARA SERVER, PQ TU NA LNHA 29, TA EXPORTANDO ALGO DE SERVER, NÃO DE APP
 
-const app = express();
+const server = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(helmet());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../public")));
+server.use(helmet());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(express.static(path.join(__dirname, "../public")));
 
 // Rotas
-app.use("/", router);
+server.use("/", router);
 
 // Inicializa o servidor
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}/`);
 })
 
@@ -53,4 +51,3 @@ server.listen(PORT, () => {
 });
 
 export default server
->>>>>>> origin/main
